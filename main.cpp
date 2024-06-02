@@ -1,23 +1,13 @@
 #include <iostream>
 #include "Value.h"
-
-// enum TokenType
-// {
-//     LParen,
-//     RParen,
-//     Comma,
-//     Colon,
-//     LBrace,
-//     RBrace,
-//     String,
-//     Number,
-//     True,
-//     False,
-//     Null
-// };
+#include "tokenizer.h"
 
 int main()
 {
+    Token t("abc");
+    std::cout << t.isLiteral() << '\n';
+    std::cout << (t.type() == Token::TokenType::StringLiteral) << '\n';
+
     Object o;
     o.add("abc", new String("xyz"));
 
